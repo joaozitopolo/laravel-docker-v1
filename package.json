@@ -1,0 +1,13 @@
+{
+  "name": "laravel-docker",
+  "version": "1.0.0",
+  "description": "## commands",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "docker build -t laravel-docker .",
+    "start": "docker run --name run-laravel-docker -it --rm -p 80:80 -v $(pwd)/testFiles:/var/www/app laravel-docker"
+  },
+  "author": "Magna Joao Polo <joaozito.polo@gmail.com>",
+  "license": "ISC"
+}
