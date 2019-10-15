@@ -1,5 +1,6 @@
 # Laravel docker
 
+
 ## commands
 
 - build the docker
@@ -8,12 +9,11 @@
 - running
     - npm start
     
-- cleanup
+- cleanup docker
     - docker stop run-laravel-docker
     - docker rm run-laravel-docker
     - docker rmi laravel-docker
 
-## configuration
 
 ## reference
 
@@ -23,4 +23,9 @@
 
 [install composer](https://www.hostinger.com/tutorials/how-to-install-composer)
 
-[]()
+
+## solving problems (at local shell)
+
+- cleaning the mysql data
+    - cd data
+    - sudo rm -rf auto.cnf ib* mysql/ sys/ performance_schema/

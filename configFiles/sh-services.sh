@@ -1,4 +1,4 @@
-mysqld --initialize --user=root
+mysqld --initialize-insecure
 
 service nginx start
 service php7.3-fpm start
