@@ -16,12 +16,16 @@ RUN apt-get install -qq php7.3-common php7.3-mysql php7.3-xml php7.3-xmlrpc php7
 
 ## composer
 RUN apt-get install -qq wget
-COPY configFiles/sh-install-composer.sh /tmp
-RUN sh /tmp/sh-install-composer.sh
+COPY configFiles/install-composer.sh /tmp
+RUN sh /tmp/install-composer.sh
 
 ## mysql
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -qq mysql-server
 
 
+# FILES
 COPY configFiles/nginx-default /etc/nginx/sites-available/default
+COPY configFiles/sh-* /root/
 
-CMD service nginx start && service php7.3-fpm start && /bin/bash
+# FINALIZE
+CMD  sh /root/sh-services.sh && sh /root/sh-post-services.sh && /bin/bash

@@ -1,0 +1,4 @@
+
+# directory for data (mysql, etc)
+/data/*
+!/data/.dir
