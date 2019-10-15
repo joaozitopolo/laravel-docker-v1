@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "docker build -t laravel-docker .",
-    "start": "docker run --name run-laravel-docker -it --rm -p 80:80 -v $(pwd)/testFiles:/var/www/app $(pwd)/data:/var/lib/mysql laravel-docker"
+    "start": "docker run --name run-laravel-docker -it --rm -p 80:80 -v $(pwd)/testFiles:/var/www/app -v $(pwd)/data:/var/lib/mysql laravel-docker"
   },
   "author": "Magna Joao Polo <joaozito.polo@gmail.com>",
   "license": "ISC"
